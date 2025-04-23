@@ -22,7 +22,7 @@ export const phones: Phone[] = [
     name: "iPhone 15 Pro Max",
     brand: "Apple",
     price: toUGX(1199.99),
-    image: "/images/photo-1488590528505-98d2b5aba04b.jpg",
+    image: "/lovable-uploads/d4966dc7-dc79-43f8-bba2-84dfc2b62c49.png",
     colors: ["Natural Titanium", "Blue Titanium", "White Titanium", "Black Titanium"],
     storage: ["128GB", "256GB", "512GB", "1TB"],
     features: ["A17 Pro Chip", "48MP Camera", "Action Button", "USB-C", "Titanium Design"],
