@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { useCart } from "@/context/CartContext";
@@ -6,12 +7,16 @@ import { Minus, Plus, ShoppingCart, Trash2, PhoneCall } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
 
-const SELLER_WHATSAPP_NUMBER = "1234567890";
+const SELLER_WHATSAPP_NUMBERS = [
+  "+256742088424",
+  "+256786758249"
+];
 
 const CartPage = () => {
   const cart = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
-  
+  const [selectedNumber, setSelectedNumber] = useState(SELLER_WHATSAPP_NUMBERS[0]);
+
   const handleQuantityChange = (id: string, newQuantity: number) => {
     if (newQuantity < 1) return;
     cart.updateQuantity(id, newQuantity);
@@ -35,7 +40,7 @@ const CartPage = () => {
   
   const generateWhatsAppMessage = () => {
     if (cart.items.length === 0) return "Hello, I'm interested in your products.";
-    let msg = "Hi! I'm interested in the following products:%0A";
+    let msg = "Hi! I'm interested in the following products from TYGA GADGETS STORE:%0A";
     cart.items.forEach((item, idx) => {
       msg += `${idx + 1}. ${item.name} - Color: ${item.selectedColor}, Storage: ${item.selectedStorage}, Qty: ${item.quantity}%0A`;
     });
@@ -43,7 +48,7 @@ const CartPage = () => {
     return msg;
   };
 
-  const whatsappLink = `https://wa.me/${SELLER_WHATSAPP_NUMBER}?text=${generateWhatsAppMessage()}`;
+  const whatsappLink = `https://wa.me/${selectedNumber.replace('+', '')}?text=${generateWhatsAppMessage()}`;
 
   return (
     <Layout>
@@ -189,7 +194,23 @@ const CartPage = () => {
         
         {/* WhatsApp Contact Button */}
         {cart.items.length > 0 && (
-          <div className="mt-8 flex flex-col items-center">
+          <div className="mt-8 flex flex-col items-center space-y-3">
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              {SELLER_WHATSAPP_NUMBERS.map((num) => (
+                <label key={num} className="inline-flex items-center gap-2 cursor-pointer">
+                  <input
+                    type="radio"
+                    name="sellerNumber"
+                    value={num}
+                    checked={selectedNumber === num}
+                    onChange={() => setSelectedNumber(num)}
+                    className="accent-green-600"
+                  />
+                  <span className="text-sm font-medium">{`Contact seller: ${num}`}</span>
+                </label>
+              ))}
+            </div>
+
             <a
               href={whatsappLink}
               target="_blank"
@@ -217,3 +238,4 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
