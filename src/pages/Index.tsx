@@ -31,8 +31,8 @@ const Index = () => {
             </div>
             <div className="md:w-1/2 flex justify-center">
               <img
-                src="/placeholder.svg"
-                alt="Latest Smartphones"
+                src="/lovable-uploads/cb7b32ce-c776-4da5-8ecd-0ee9aff4d457.png"
+                alt="Latest iPhone"
                 className="max-h-96 object-contain"
               />
             </div>
@@ -126,3 +126,4 @@ const Index = () => {
 };
 
 export default Index;
+
