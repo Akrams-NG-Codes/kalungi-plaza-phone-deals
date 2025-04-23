@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { phones } from "@/data/phones";
@@ -14,12 +13,22 @@ import { Checkbox } from "@/components/ui/checkbox";
 const PhoneListingPage = () => {
   const [filterOpen, setFilterOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 2000]);
+  const [priceRange, setPriceRange] = useState([0, 7600000]); // 0 to $2000 in UGX
   const [sortOption, setSortOption] = useState("featured");
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
   const brands = Array.from(new Set(phones.map(phone => phone.brand)));
   
+  // Helper function to format UGX
+  const formatUGX = (amount: number) => {
+    return new Intl.NumberFormat('en-UG', {
+      style: 'currency',
+      currency: 'UGX',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   // Filter and sort phones based on user's selection
   const filteredPhones = phones.filter(phone => {
     const matchesSearch = phone.name.toLowerCase().includes(searchQuery.toLowerCase()) || 
@@ -108,16 +117,16 @@ const PhoneListingPage = () => {
                 <h4 className="font-medium mb-2">Price Range</h4>
                 <div className="mt-4">
                   <Slider 
-                    defaultValue={[0, 2000]} 
-                    max={2000} 
-                    step={50}
+                    defaultValue={[0, 7600000]} 
+                    max={7600000} 
+                    step={190000} // ~$50 in UGX
                     value={priceRange}
                     onValueChange={setPriceRange}
                   />
                 </div>
                 <div className="flex justify-between mt-2 text-sm text-muted-foreground">
-                  <span>${priceRange[0]}</span>
-                  <span>${priceRange[1]}</span>
+                  <span>{formatUGX(priceRange[0])}</span>
+                  <span>{formatUGX(priceRange[1])}</span>
                 </div>
               </div>
               
@@ -146,7 +155,7 @@ const PhoneListingPage = () => {
                 className="w-full"
                 onClick={() => {
                   setSearchQuery("");
-                  setPriceRange([0, 2000]);
+                  setPriceRange([0, 7600000]);
                   setSelectedBrands([]);
                 }}
               >
@@ -174,7 +183,7 @@ const PhoneListingPage = () => {
                   variant="link" 
                   onClick={() => {
                     setSearchQuery("");
-                    setPriceRange([0, 2000]);
+                    setPriceRange([0, 7600000]);
                     setSelectedBrands([]);
                   }}
                 >

@@ -1,4 +1,3 @@
-
 import { Phone } from "@/types";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -22,6 +21,15 @@ const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
     isNew,
     discountPercentage,
   } = phone;
+
+  const formatUGX = (amount: number) => {
+    return new Intl.NumberFormat('en-UG', {
+      style: 'currency',
+      currency: 'UGX',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
 
   return (
     <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg group">
@@ -63,10 +71,10 @@ const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
       
         <CardFooter className="flex justify-between items-center pt-0">
           <div className="flex items-end gap-2">
-            <span className="font-bold text-lg">${price}</span>
+            <span className="font-bold text-lg">{formatUGX(price)}</span>
             {originalPrice && (
               <span className="text-muted-foreground text-sm line-through">
-                ${originalPrice}
+                {formatUGX(originalPrice)}
               </span>
             )}
           </div>

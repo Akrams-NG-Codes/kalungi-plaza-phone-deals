@@ -1,4 +1,3 @@
-
 import { Minus, Plus, Trash2 } from "lucide-react";
 import { CartItem } from "@/types";
 
@@ -9,6 +8,16 @@ interface CartItemsProps {
 }
 
 const CartItems = ({ items, onQuantityChange, onRemoveItem }: CartItemsProps) => {
+  // Helper function to format UGX
+  const formatUGX = (amount: number) => {
+    return new Intl.NumberFormat('en-UG', {
+      style: 'currency',
+      currency: 'UGX',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
     <div className="lg:col-span-2">
       <div className="bg-white rounded-lg border">
@@ -70,7 +79,7 @@ const CartItems = ({ items, onQuantityChange, onRemoveItem }: CartItemsProps) =>
                 </td>
                 <td className="px-6 py-4 text-right">
                   <div>
-                    <p className="font-medium">${(item.price * item.quantity).toFixed(2)}</p>
+                    <p className="font-medium">{formatUGX(item.price * item.quantity)}</p>
                     <button 
                       className="text-sm text-red-600 hover:text-red-800 flex items-center gap-1 mt-2 hidden sm:inline-flex"
                       onClick={() => onRemoveItem(item.id)}

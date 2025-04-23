@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
@@ -13,6 +12,16 @@ const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps
   const tax = subtotal * 0.16;
   const total = subtotal * 1.16;
 
+  // Helper function to format UGX
+  const formatUGX = (amount: number) => {
+    return new Intl.NumberFormat('en-UG', {
+      style: 'currency',
+      currency: 'UGX',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
     <div className="bg-white rounded-lg border p-6 sticky top-24">
       <h2 className="text-xl font-bold mb-4">Order Summary</h2>
@@ -20,7 +29,7 @@ const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps
       <div className="space-y-3">
         <div className="flex justify-between">
           <span className="text-muted-foreground">Subtotal</span>
-          <span>${subtotal.toFixed(2)}</span>
+          <span>{formatUGX(subtotal)}</span>
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">Shipping</span>
@@ -28,7 +37,7 @@ const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps
         </div>
         <div className="flex justify-between">
           <span className="text-muted-foreground">Tax</span>
-          <span>${tax.toFixed(2)}</span>
+          <span>{formatUGX(tax)}</span>
         </div>
       </div>
       
@@ -36,7 +45,7 @@ const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps
       
       <div className="flex justify-between font-bold mb-6">
         <span>Total</span>
-        <span>${total.toFixed(2)}</span>
+        <span>{formatUGX(total)}</span>
       </div>
       
       <Button 
