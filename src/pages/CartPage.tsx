@@ -1,11 +1,12 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { useCart } from "@/context/CartContext";
 import { Button } from "@/components/ui/button";
-import { Minus, Plus, ShoppingCart, Trash2 } from "lucide-react";
+import { Minus, Plus, ShoppingCart, Trash2, PhoneCall } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Separator } from "@/components/ui/separator";
+
+const SELLER_WHATSAPP_NUMBER = "1234567890";
 
 const CartPage = () => {
   const cart = useCart();
@@ -32,10 +33,22 @@ const CartPage = () => {
     }, 2000);
   };
   
+  const generateWhatsAppMessage = () => {
+    if (cart.items.length === 0) return "Hello, I'm interested in your products.";
+    let msg = "Hi! I'm interested in the following products:%0A";
+    cart.items.forEach((item, idx) => {
+      msg += `${idx + 1}. ${item.name} - Color: ${item.selectedColor}, Storage: ${item.selectedStorage}, Qty: ${item.quantity}%0A`;
+    });
+    msg += `%0ATotal: $${cart.getCartTotal()}`;
+    return msg;
+  };
+
+  const whatsappLink = `https://wa.me/${SELLER_WHATSAPP_NUMBER}?text=${generateWhatsAppMessage()}`;
+
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8">Shopping Cart</h1>
+        <h1 className="text-3xl font-bold mb-8">Your Cart</h1>
         
         {cart.items.length === 0 ? (
           <div className="text-center py-12">
@@ -171,6 +184,31 @@ const CartPage = () => {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+        
+        {/* WhatsApp Contact Button */}
+        {cart.items.length > 0 && (
+          <div className="mt-8 flex flex-col items-center">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full md:w-auto"
+            >
+              <Button
+                variant="secondary"
+                size="lg"
+                className="flex items-center justify-center gap-2 w-full"
+                type="button"
+              >
+                <PhoneCall className="h-5 w-5 text-green-600" />
+                Contact Seller on WhatsApp
+              </Button>
+            </a>
+            <p className="text-muted-foreground text-xs mt-2">
+              You’ll be redirected to WhatsApp with your cart details.
+            </p>
           </div>
         )}
       </div>
