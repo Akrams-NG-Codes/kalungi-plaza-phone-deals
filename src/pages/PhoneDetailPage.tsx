@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
@@ -38,6 +37,15 @@ const PhoneDetailPage = () => {
       </Layout>
     );
   }
+
+  const formatUGX = (amount: number) => {
+    return new Intl.NumberFormat('en-UG', {
+      style: 'currency',
+      currency: 'UGX',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
 
   const handleQuantityChange = (change: number) => {
     const newQuantity = quantity + change;
@@ -94,10 +102,10 @@ const PhoneDetailPage = () => {
             {/* Price */}
             <div className="mb-6">
               <div className="flex items-center gap-3">
-                <span className="text-3xl font-bold">${phone.price}</span>
+                <span className="text-3xl font-bold">{formatUGX(phone.price)}</span>
                 {phone.originalPrice && (
                   <span className="text-muted-foreground line-through text-lg">
-                    ${phone.originalPrice}
+                    {formatUGX(phone.originalPrice)}
                   </span>
                 )}
                 {phone.discountPercentage && phone.discountPercentage > 0 && (

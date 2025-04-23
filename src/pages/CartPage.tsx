@@ -44,7 +44,7 @@ const CartPage = () => {
     cart.items.forEach((item, idx) => {
       msg += `${idx + 1}. ${item.name} - Color: ${item.selectedColor}, Storage: ${item.selectedStorage}, Qty: ${item.quantity}%0A`;
     });
-    msg += `%0ATotal: $${cart.getCartTotal()}`;
+    msg += `%0ATotal: UGX ${cart.getCartTotal().toLocaleString()}`;
     return msg;
   };
 

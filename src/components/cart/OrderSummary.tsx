@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
@@ -10,7 +11,7 @@ interface OrderSummaryProps {
 
 const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps) => {
   const tax = subtotal * 0.16;
-  const total = subtotal * 1.16;
+  const total = subtotal + tax;
 
   // Helper function to format UGX
   const formatUGX = (amount: number) => {
