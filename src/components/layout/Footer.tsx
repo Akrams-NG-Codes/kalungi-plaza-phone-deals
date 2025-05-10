@@ -69,8 +69,8 @@ const Footer = () => {
             <ul className="space-y-2 text-muted-foreground">
               <li>Tyga Gadget Store, Main Street</li>
               <li>Kampala, Uganda</li>
-              <li>Phone: +256 700 123 456</li>
-              <li>Email: info@tygagadgetstores.com</li>
+              <li>Phone: +256742088424</li>
+              <li>Email: tygaofficial790@gmail.com</li>
             </ul>
           </div>
         </div>

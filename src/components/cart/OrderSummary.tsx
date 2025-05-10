@@ -1,15 +1,13 @@
-
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
 
 interface OrderSummaryProps {
   subtotal: number;
-  isCheckingOut: boolean;
-  onCheckout: () => void;
+  whatsappLink: string;
 }
 
-const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps) => {
+const OrderSummary = ({ subtotal, whatsappLink }: OrderSummaryProps) => {
   const tax = subtotal * 0.16;
   const total = subtotal + tax;
 
@@ -49,14 +47,15 @@ const OrderSummary = ({ subtotal, isCheckingOut, onCheckout }: OrderSummaryProps
         <span>{formatUGX(total)}</span>
       </div>
       
-      <Button 
-        className="w-full" 
-        size="lg"
-        onClick={onCheckout}
-        disabled={isCheckingOut}
-      >
-        {isCheckingOut ? "Processing..." : "Checkout"}
-      </Button>
+      <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="w-full block">
+        <Button 
+          className="w-full bg-green-600 hover:bg-green-700 text-white" 
+          size="lg"
+          type="button"
+        >
+          Contact Seller on WhatsApp
+        </Button>
+      </a>
       
       <div className="mt-4 text-center">
         <Link to="/phones" className="text-sm text-primary hover:underline">

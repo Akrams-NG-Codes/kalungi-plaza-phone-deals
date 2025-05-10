@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import Layout from "@/components/layout/Layout";
 import { useCart } from "@/context/CartContext";
@@ -68,8 +67,7 @@ const CartPage = () => {
               <div>
                 <OrderSummary
                   subtotal={cart.getCartTotal()}
-                  isCheckingOut={isCheckingOut}
-                  onCheckout={handleCheckout}
+                  whatsappLink={whatsappLink}
                 />
               </div>
             </div>
