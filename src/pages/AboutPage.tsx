@@ -20,7 +20,7 @@ const AboutPage = () => {
             <h2 className="text-2xl font-bold mb-4">Our Story</h2>
             <p className="mb-4">
               Founded in 2015, Tyga Gadget Store began as a small mobile phone shop in the heart of Kampala.
-              Our founder, John Tyga, had a vision to provide high-quality smartphones at affordable prices while
+              Our founder, Tyga, had a vision to provide high-quality smartphones at affordable prices while
               offering exceptional customer service.
             </p>
             <p className="mb-4">
@@ -120,7 +120,7 @@ const AboutPage = () => {
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Address</h3>
-                  <p className="text-muted-foreground">Tyga Gadget Store, Level 2, Shop #24</p>
+                  <p className="text-muted-foreground">Tyga Gadget Store, Kalungi Plaza</p>
                   <p className="text-muted-foreground">Main Street, Kampala, Uganda</p>
                 </div>
               </div>
@@ -137,16 +137,16 @@ const AboutPage = () => {
                 <Phone className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Contact</h3>
-                  <p className="text-muted-foreground">Phone: +256 700 123 456</p>
-                  <p className="text-muted-foreground">WhatsApp: +256 700 123 456</p>
+                  <p className="text-muted-foreground">Phone: +256742088424</p>
+                  <p className="text-muted-foreground">WhatsApp: +256742088424</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <Mail className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-muted-foreground">info@tygagadgetstores.com</p>
-                  <p className="text-muted-foreground">support@tygagadgetstores.com</p>
+                  <p className="text-muted-foreground">tygaofficial790@gmail.com</p>
+                  <p className="text-muted-foreground">tygaofficial790@gmail.com</p>
                 </div>
               </div>
             </div>

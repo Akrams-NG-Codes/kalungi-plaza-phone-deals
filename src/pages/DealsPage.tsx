@@ -36,7 +36,7 @@ const DealsPage = () => {
             Come back often or visit our store in Tyga Gadget Store.
           </p>
           <p className="font-medium">
-            Contact us at <span className="text-primary">+256 700 123 456</span> for personalized offers.
+            Contact us at <span className="text-primary">+256742088424</span> for personalized offers.
           </p>
         </div>
       </div>
