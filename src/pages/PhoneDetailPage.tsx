@@ -76,7 +76,7 @@ const PhoneDetailPage = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Product Image */}
           <div className="bg-white rounded-lg p-8 border flex items-center justify-center">
-            <img src={phone.image} alt={phone.name} className="max-h-96 object-contain" />
+            <img src={phone.image} alt={phone.name} className="max-h-96 object-cover bg-white" onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder.png'; }} />
           </div>
 
           {/* Product Info */}

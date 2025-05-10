@@ -35,8 +35,8 @@ const AboutPage = () => {
           </div>
           <div className="rounded-lg overflow-hidden">
             <img 
-              src="/placeholder.svg" 
-              alt="Tyga Gadget Stores" 
+              src="/images/iphone 16.jpg" 
+              alt="iPhone 16" 
               className="w-full h-auto"
             />
           </div>
@@ -110,8 +110,8 @@ const AboutPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
               <img 
-                src="/placeholder.svg" 
-                alt="Store Location" 
+                src="/images/samsung s24 ultra.jpg" 
+                alt="Samsung Galaxy S24 Ultra" 
                 className="w-full h-auto rounded-lg"
               />
             </div>

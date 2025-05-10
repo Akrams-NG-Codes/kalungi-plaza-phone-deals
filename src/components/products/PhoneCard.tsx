@@ -47,7 +47,8 @@ const PhoneCard: React.FC<PhoneCardProps> = ({ phone }) => {
             <img
               src={image}
               alt={name}
-              className="object-contain h-full w-full transition-transform group-hover:scale-105"
+              className="object-cover h-full w-full transition-transform group-hover:scale-105 bg-white"
+              onError={e => { e.currentTarget.onerror = null; e.currentTarget.src = '/images/placeholder.png'; }}
             />
           </div>
         </div>
