@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import PhoneGrid from "@/components/products/PhoneGrid";
 import { Button } from "@/components/ui/button";
@@ -18,7 +17,7 @@ const Index = () => {
                 Find Your Perfect Phone at Unbeatable Prices
               </h1>
               <p className="text-xl text-muted-foreground mb-8">
-                Discover the latest smartphones with exclusive deals at Kalungi Plaza
+                Discover the latest smartphones with exclusive deals at Tyga Gadget Stores
               </p>
               <div className="flex gap-4">
                 <Button size="lg" asChild>
@@ -72,7 +71,7 @@ const Index = () => {
 
       {/* Benefits Section */}
       <section className="container mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Kalungi Plaza</h2>
+        <h2 className="text-3xl font-bold text-center mb-12">Why Choose Tyga Gadget Stores</h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="flex flex-col items-center text-center p-6 rounded-lg border border-border">
             <div className="bg-primary/10 p-4 rounded-full mb-4">
@@ -113,7 +112,7 @@ const Index = () => {
             Top Brands Available
           </h2>
           <div className="flex flex-wrap justify-center gap-12">
-            {['Apple', 'Samsung', 'Google', 'Xiaomi', 'OnePlus', 'Nothing'].map((brand) => (
+            {['Apple', 'Samsung'].map((brand) => (
               <div key={brand} className="text-2xl font-bold text-gray-400 hover:text-primary transition-colors">
                 {brand}
               </div>

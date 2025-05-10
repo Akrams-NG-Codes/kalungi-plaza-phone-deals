@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { dealPhones } from "@/data/phones";
 import PhoneGrid from "@/components/products/PhoneGrid";
@@ -34,7 +33,7 @@ const DealsPage = () => {
           <h2 className="text-2xl font-bold mb-4">Looking for something specific?</h2>
           <p className="text-muted-foreground mb-6 max-w-xl mx-auto">
             We constantly update our inventory with the latest models and best deals.
-            Come back often or visit our store in Kalungi Plaza.
+            Come back often or visit our store in Tyga Gadget Store.
           </p>
           <p className="font-medium">
             Contact us at <span className="text-primary">+256 700 123 456</span> for personalized offers.

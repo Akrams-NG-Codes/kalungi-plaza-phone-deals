@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, Twitter } from 'lucide-react';
 
@@ -9,7 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Kalungi Plaza Phone Deals</h3>
+            <h3 className="text-lg font-semibold mb-4">Tyga Gadget Store</h3>
             <p className="text-muted-foreground mb-4">
               Your trusted destination for the best deals on mobile phones and accessories.
             </p>
@@ -68,16 +67,16 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>Kalungi Plaza, Main Street</li>
+              <li>Tyga Gadget Store, Main Street</li>
               <li>Kampala, Uganda</li>
               <li>Phone: +256 700 123 456</li>
-              <li>Email: info@kalungiphonedeals.com</li>
+              <li>Email: info@tygagadgetstores.com</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t mt-8 pt-6 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Kalungi Plaza Phone Deals. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Tyga Gadget Store. All rights reserved.</p>
         </div>
       </div>
     </footer>

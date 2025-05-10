@@ -1,4 +1,3 @@
-
 import Layout from "@/components/layout/Layout";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
@@ -9,7 +8,7 @@ const AboutPage = () => {
       <div className="container mx-auto px-4 py-8">
         {/* Hero Section */}
         <div className="py-12 text-center">
-          <h1 className="text-4xl font-bold mb-4">About Kalungi Plaza Phone Deals</h1>
+          <h1 className="text-4xl font-bold mb-4">About Tyga Gadget Store</h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Your trusted destination for premium smartphones at the best prices in Uganda.
           </p>
@@ -20,8 +19,8 @@ const AboutPage = () => {
           <div>
             <h2 className="text-2xl font-bold mb-4">Our Story</h2>
             <p className="mb-4">
-              Founded in 2015, Kalungi Plaza Phone Deals began as a small mobile phone shop in the heart of Kampala.
-              Our founder, John Kalungi, had a vision to provide high-quality smartphones at affordable prices while
+              Founded in 2015, Tyga Gadget Store began as a small mobile phone shop in the heart of Kampala.
+              Our founder, John Tyga, had a vision to provide high-quality smartphones at affordable prices while
               offering exceptional customer service.
             </p>
             <p className="mb-4">
@@ -37,7 +36,7 @@ const AboutPage = () => {
           <div className="rounded-lg overflow-hidden">
             <img 
               src="/placeholder.svg" 
-              alt="Kalungi Plaza Store" 
+              alt="Tyga Gadget Stores" 
               className="w-full h-auto"
             />
           </div>
@@ -88,7 +87,7 @@ const AboutPage = () => {
           <h2 className="text-2xl font-bold mb-8 text-center">Meet Our Team</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { name: "John Kalungi", role: "Founder & CEO", image: "/placeholder.svg" },
+              { name: "John Tyga", role: "Founder & CEO", image: "/placeholder.svg" },
               { name: "Sarah Namirembe", role: "Sales Manager", image: "/placeholder.svg" },
               { name: "David Okello", role: "Technical Support", image: "/placeholder.svg" },
               { name: "Mary Atim", role: "Customer Service", image: "/placeholder.svg" }
@@ -121,7 +120,7 @@ const AboutPage = () => {
                 <MapPin className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Address</h3>
-                  <p className="text-muted-foreground">Kalungi Plaza, Level 2, Shop #24</p>
+                  <p className="text-muted-foreground">Tyga Gadget Store, Level 2, Shop #24</p>
                   <p className="text-muted-foreground">Main Street, Kampala, Uganda</p>
                 </div>
               </div>
@@ -146,8 +145,8 @@ const AboutPage = () => {
                 <Mail className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-muted-foreground">info@kalungiphonedeals.com</p>
-                  <p className="text-muted-foreground">support@kalungiphonedeals.com</p>
+                  <p className="text-muted-foreground">info@tygagadgetstores.com</p>
+                  <p className="text-muted-foreground">support@tygagadgetstores.com</p>
                 </div>
               </div>
             </div>

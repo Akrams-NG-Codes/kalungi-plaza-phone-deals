@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { ShoppingCart, Search, Menu, X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
@@ -18,7 +17,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <h1 className="text-2xl font-bold text-primary">
-              Kalungi<span className="text-secondary">Plaza</span>
+              Tyga<span className="text-secondary">Gadget</span>
             </h1>
           </Link>
 
