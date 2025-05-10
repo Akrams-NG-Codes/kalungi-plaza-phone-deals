@@ -70,7 +70,7 @@ const Footer = () => {
               <li>Tyga Gadget Store, Main Street</li>
               <li>Kampala, Uganda</li>
               <li>Phone: +256742088424</li>
-              <li>Email: tygaofficial790@gmail.com</li>
+              <li>Email: <a href="mailto:tygaofficial790@gmail.com" className="hover:text-primary underline">tygaofficial790@gmail.com</a></li>
             </ul>
           </div>
         </div>

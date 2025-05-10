@@ -145,8 +145,8 @@ const AboutPage = () => {
                 <Mail className="h-5 w-5 text-primary mt-0.5" />
                 <div>
                   <h3 className="font-medium">Email</h3>
-                  <p className="text-muted-foreground">tygaofficial790@gmail.com</p>
-                  <p className="text-muted-foreground">tygaofficial790@gmail.com</p>
+                  <p className="text-muted-foreground"><a href="mailto:tygaofficial790@gmail.com" className="hover:text-primary underline">tygaofficial790@gmail.com</a></p>
+                  <p className="text-muted-foreground"><a href="mailto:tygaofficial790@gmail.com" className="hover:text-primary underline">tygaofficial790@gmail.com</a></p>
                 </div>
               </div>
             </div>
